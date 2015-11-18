@@ -12,3 +12,15 @@
 	background-color: #e0e0e0;
 	float: left;
 }
+
+.company-name{
+	font-size:21px;
+}
+
+.change-name{
+	font-size:16px;
+}
+
+.stock-symbol{
+	font-size:16px;
+}

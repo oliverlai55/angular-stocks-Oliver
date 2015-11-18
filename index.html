@@ -4,12 +4,13 @@
 	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.min.js"></script>
 	<script type="text/javascript" src="js/controller.js"></script>
 </head>
-<body ng-controller="stocksController">
+<body ng-controller="stocksController" class="container-fluid">
 	<div id="wrapper">
 		<!-- Load all stocks in the left hand rail that match the user search -->
 		<div id="left-all-stocks">
@@ -19,7 +20,7 @@
 					<input type="text" ng-model="userStocks">
 				</div>
 			</form>
-			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks'>
+			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks2'>
 				<div class="company-name">{{stock.Name}}</div>
 				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
 				<div class="stock-symbol">{{stock.Symbol}}</div>
@@ -40,6 +41,14 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="chart-container">
+			<div class="chart-text">3 Months, 10d MA</div>
+				<img src="{{theChart}}">
+			<div class="chart-text">12 Months, 50d MA</div>
+				<img src="{{theChart2}}">
+		</div>
+		
 	</div>
 </body>
 </html>

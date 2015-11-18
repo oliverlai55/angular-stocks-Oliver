@@ -5,8 +5,9 @@ stocksApp.controller('stocksController', function ($scope, $http){
 	$scope.getStocks = function(){
 		var encodedTickers = encodeURIComponent($scope.userStocks);
 		url = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20("'+encodedTickers+'")%0A%09%09&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json';
+		
 		$http.get(url).success(function (stockData){
-			if(($scope.userStocks.indexOf(',') > -1){
+			if($scope.userStocks.indexOf(',') > -1){
 				$scope.listOfStocks = stockData.query.results.quote;
 			}else{
 				$scope.listOfStocks = [stockData.query.results.quote];

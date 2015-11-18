@@ -10,10 +10,10 @@
 	<script type="text/javascript" src="js/angular-route.min.js"></script>
 	<script type="text/javascript" src="js/controller.js"></script>
 </head>
-<body ng-controller="stocksController" class="container-fluid">
+<body ng-controller="stocksController" class="container-fluid col-sm-12">
 	<div id="wrapper">
 		<!-- Load all stocks in the left hand rail that match the user search -->
-		<div id="left-all-stocks" class="col-sm-3">
+		<div id="left-all-stocks" class="col-sm-2">
 			<form ng-submit="getStocks()">
 				<div id="get-stock-text">What stocks would you like to search for? Separate with a comma (i.e. goog,msft,yhoo):</div>
 				<div id="get-stock-input">
@@ -22,21 +22,23 @@
 			</form>
 			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks'>
 				<div class="company-name">{{stock.Name}}</div>
-				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
 				<div class="stock-symbol">{{stock.Symbol}}</div>
+				<div class="trade-price">{{stock.LastTradePriceOnly}}</div>
+				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
+				
 
 			</div>
 		</div>
 
 		<!-- Show the middle column with teh stock detail inside -->
-		<div id="right-single-stock" class="col-sm-4">
+		<div id="right-single-stock" class="col-sm-7">
 			<div id="stock-filter">
 				Filter: <input type="text" ng-model="stockFilter">
 				<!-- Have Angular create one div for each property in this stock -->
 				<div id="" ng-repeat="detail in dataList | filter:stockFilter">
-					<div class="stock-properties">
-						<div class="detail-prop">{{detail.prop}}</div>
-						<div class="prop-value">{{detail.value}}</div>
+					<div class="stock-properties col-sm-12">
+						<div class="detail-prop col-sm-6">{{detail.prop}}</div>
+						<div class="prop-value col-sm-6">{{detail.value}}</div>
 						
 					</div>
 				</div>

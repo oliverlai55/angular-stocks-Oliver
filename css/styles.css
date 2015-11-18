@@ -7,7 +7,7 @@
 }
 
 #left-all-stocks{
-	width: 33%;
+	width: 20%;
 	height: 95vh;
 	background-color: #e0e0e0;
 	float: left;
@@ -32,5 +32,9 @@
 
 .stock-symbol{
 	font-size:16px;
+}
 
-
+#right-single-stock{
+	overflow: scroll;
+	height: 95vh;
+}

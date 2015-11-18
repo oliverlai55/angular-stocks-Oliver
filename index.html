@@ -21,8 +21,9 @@
 			</form>
 			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks'>
 				<div class="company-name">{{stock.Name}}</div>
-				<div class="stock-change">{{stock.Change}}</div>
+				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
 				<div class="stock-symbol">{{stock.Symbol}}</div>
+
 			</div>
 		</div>
 

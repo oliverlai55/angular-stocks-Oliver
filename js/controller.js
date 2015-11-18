@@ -9,7 +9,24 @@ stocksApp.controller('stocksController', function ($scope, $http){
 		$http.get(url).success(function (stockData){
 			// console.log(stockData);
 			// console.log(encodedTickers);
-			$scope.listOfStocks = stockData.query.results.quote;
+stockData = 
+
+			// $scope.listOfStocks = stockData.query.results.quote;
+			$scope.listOfStocks2 = {
+				Symbol: "Goog",
+				Change: "+1.2",
+				Name: "Google"
+			},
+			{
+				Symbol: "Yhoo",
+				Change: "+1.2",
+				Name: "Yahoo"
+			},
+			{
+				Symbol: "X",
+				Change: "+2.2",
+				Name: "Trinity Trains"
+			},
 
 			// $scope.loadStock($scope)
 

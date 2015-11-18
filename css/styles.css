@@ -20,7 +20,17 @@
 .change-name{
 	font-size:16px;
 }
+.stock-change change-positive{
+	font-size:16px;
+	color: green;
+}
+
+.stock-change change-negative{
+	font-size:16px;
+	color: red;
+}
 
 .stock-symbol{
 	font-size:16px;
-}
+
+

@@ -13,14 +13,14 @@
 <body ng-controller="stocksController" class="container-fluid">
 	<div id="wrapper">
 		<!-- Load all stocks in the left hand rail that match the user search -->
-		<div id="left-all-stocks">
+		<div id="left-all-stocks" class="col-sm-3">
 			<form ng-submit="getStocks()">
 				<div id="get-stock-text">What stocks would you like to search for? Separate with a comma (i.e. goog,msft,yhoo):</div>
 				<div id="get-stock-input">
 					<input type="text" ng-model="userStocks">
 				</div>
 			</form>
-			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks2'>
+			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks'>
 				<div class="company-name">{{stock.Name}}</div>
 				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
 				<div class="stock-symbol">{{stock.Symbol}}</div>
@@ -29,7 +29,7 @@
 		</div>
 
 		<!-- Show the middle column with teh stock detail inside -->
-		<div id="right-single-stock">
+		<div id="right-single-stock" class="col-sm-4">
 			<div id="stock-filter">
 				Filter: <input type="text" ng-model="stockFilter">
 				<!-- Have Angular create one div for each property in this stock -->
@@ -37,18 +37,19 @@
 					<div class="stock-properties">
 						<div class="detail-prop">{{detail.prop}}</div>
 						<div class="prop-value">{{detail.value}}</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="chart-container">
+		<div id="chart-container" class="col-sm-5 col-sm-offset-3">
 			<div class="chart-text">3 Months, 10d MA</div>
 				<img src="{{theChart}}">
 			<div class="chart-text">12 Months, 50d MA</div>
 				<img src="{{theChart2}}">
 		</div>
-		
+
 	</div>
 </body>
 </html>

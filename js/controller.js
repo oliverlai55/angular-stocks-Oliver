@@ -33,7 +33,13 @@ stocksApp.controller('stocksController', function ($scope, $http){
 		}
 	}
 
-
+	$scope.getChangeClass = function(change){
+		if(change.indexOf('+') > -1){
+			return 'change-positive';
+		}else if (change.indexOf('-') > -1){
+			return'change-negative';
+		}
+	}
 });
 
 

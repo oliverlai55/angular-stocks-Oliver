@@ -33,14 +33,15 @@ stocksApp.controller('stocksController', function ($scope, $http){
 				value: stockData[name]
 			})
 		}
-
-		$scope.Chart1 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=3m&q=l&l=on&z=s&p=m10,m100';
-		$scope.Chart2 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=6m&q=l&l=on&z=s&p=m50,m100';
-		alert("hi");
+		getChart(stockData);
+		
 	}
 
-	$scope.getCharts = function(stockData){
-		
+	function getChart(stockData){
+		$scope.chart1 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=3m&q=l&l=on&z=s&p=m10,m100';
+		$scope.chart2 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=1ym&q=l&l=on&z=s&p=m50,m200';
+		alert("hi");
+		console.log(stockData.Symbol);
 	}
 
 	$scope.getChangeClass = function(change){

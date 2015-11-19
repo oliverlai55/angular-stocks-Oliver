@@ -39,6 +39,9 @@
 	height: 95vh;
 }
 
+.prop-value{
+	text-align: right;
+}
 .stock-properties:hover{
 	background-color: #f0f0f0;
 	font-weight: bold;

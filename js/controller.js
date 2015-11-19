@@ -38,7 +38,9 @@ stocksApp.controller('stocksController', function ($scope, $http){
 	}
 
 	function getChart(stockData){
+		$scope.description1 = "3 Months, 10d MA";
 		$scope.chart1 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=3m&q=l&l=on&z=s&p=m10,m100';
+		$scope.description2 = "12 Months, 50d MA";
 		$scope.chart2 = 'http://chart.finance.yahoo.com/z?s='+stockData.Symbol+'&t=1ym&q=l&l=on&z=s&p=m50,m200';
 		alert("hi");
 		console.log(stockData.Symbol);

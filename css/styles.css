@@ -39,6 +39,11 @@
 	height: 95vh;
 }
 
+.stock-properties:hover{
+	background-color: #f0f0f0;
+	font-weight: bold;
+}
+
 .image{
 	width:77%;
 }

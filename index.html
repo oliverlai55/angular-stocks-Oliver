@@ -22,9 +22,12 @@
 			</form>
 			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat='stock in listOfStocks'>
 				<div class="company-name">{{stock.Name}}</div>
-				<div class="stock-symbol">{{stock.Symbol}}</div>
-				<div class="trade-price">{{stock.LastTradePriceOnly}}</div>
-				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
+				<div class="stock-symbol">Symbol: {{stock.Symbol}}</div>
+				<div class="trade-price">Price: {{stock.LastTradePriceOnly}}</div>
+				<div class="stock-change {{getChangeClass(stock.Change)}}">Price Change: {{stock.Change}}</div>
+				<div class="stock-button">
+					<button type="button" class="btn btn-primary">Stock Detail</button>
+				</div>
 				
 
 			</div>
@@ -45,11 +48,13 @@
 			</div>
 		</div>
 
-		<div id="chart-container" class="col-sm-5 col-sm-offset-3">
-			<div class="chart-text">3 Months, 10d MA</div>
-				<img src="{{theChart}}">
-			<div class="chart-text">12 Months, 50d MA</div>
-				<img src="{{theChart2}}">
+		<div id="chart-container" class= "col-sm-5 col-sm-offset-3">
+			<div class="chart-text" ng-repeat="chart1 in Chart1">3 Months, 10d MA
+				<img src="{{chart1}}">
+			</div>
+			<div class="chart-text" ng-repeat="chart2 in Chart2">12 Months, 50d MA
+				<img src="{{chart2}}">
+			</div>
 		</div>
 
 	</div>
